@@ -1,0 +1,26 @@
+{
+  "2022": {
+    "positive": 29.6,
+    "negative": 11.1,
+    "neutral": 59.3,
+    "total": 27
+  },
+  "2023": {
+    "positive": 56.0,
+    "negative": 0.0,
+    "neutral": 44.0,
+    "total": 25
+  },
+  "2024": {
+    "positive": 25.0,
+    "negative": 16.7,
+    "neutral": 58.3,
+    "total": 12
+  },
+  "2025": {
+    "positive": 26.0,
+    "negative": 0.0,
+    "neutral": 74.0,
+    "total": 50
+  }
+}
