@@ -161,7 +161,7 @@ export default function InvestigationWorkspace({ ctx }) {
   };
 
   const isFinished = ["COMPLETED", "PARTIAL"].includes((jobStatus || "").toUpperCase());
-  if (loading && !isFinished) {
+  if (loading || (!inv && !error)) {
     return <JobProgressOverlay status={jobStatus} topic={inv?.topic || topicInput || "Investigation"} progress={jobProgress} stage={jobStage} error={error} metadata={inv?.metadata} />;
   }
 
