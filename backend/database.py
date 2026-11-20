@@ -17,8 +17,11 @@ parsed = urllib.parse.urlparse(RAW_DB_URL)
 user_pass = f"{parsed.username}:{parsed.password}" if parsed.username else ""
 netloc = f"{user_pass}@{parsed.hostname}" + (f":{parsed.port}" if parsed.port else "")
 
-# Sync URL for Alembic / sync operations (uses psycopg2)
-SYNC_DATABASE_URL = RAW_DB_URL
+# Ensure sync URL explicitly specifies psycopg2 driver
+if RAW_DB_URL.startswith("postgresql://"):
+    SYNC_DATABASE_URL = RAW_DB_URL.replace("postgresql://", "postgresql+psycopg2://", 1)
+else:
+    SYNC_DATABASE_URL = RAW_DB_URL
 
 # Async URL for FastAPI async requests (uses asyncpg)
 ASYNC_DATABASE_URL = f"postgresql+asyncpg://{netloc}{parsed.path}?ssl=require"
