@@ -4,6 +4,7 @@ pydantic
 sqlalchemy[asyncio]
 greenlet
 psycopg2-binary
+psycopg[binary]
 asyncpg
 alembic
 python-dotenv
@@ -12,6 +13,8 @@ requests
 httpx
 beautifulsoup4
 newspaper3k
+trafilatura
+dateparser
 feedparser
 gnews
 sentence-transformers
